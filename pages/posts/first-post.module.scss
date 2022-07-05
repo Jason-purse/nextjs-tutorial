@@ -1,0 +1,19 @@
+.first-post {
+  width: 100%;
+  height: 100%;
+  background: #999999;
+  color: brown;
+
+  .content {
+     background-color: #eaeaea;
+     color: blueviolet;
+    .item {
+      background-color: #0070f3;
+      color: white;
+    }
+  }
+}
+.item {
+  color: black;
+  background-color: greenyellow;
+}
