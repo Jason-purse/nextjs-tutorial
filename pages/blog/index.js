@@ -7,7 +7,6 @@ function Blog({posts}) {
         </ul>
     )
 }
-
 export default Blog
 export async function getStaticProps() {
 
