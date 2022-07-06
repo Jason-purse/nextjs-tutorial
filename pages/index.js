@@ -20,6 +20,12 @@ export default function Home() {
             Read <Link href="/posts/first-post"><a>this page!</a></Link>
           </h1>
 
+          <p>
+            <Link href="posts">
+              <a>点击查看所有的文章</a>
+            </Link>
+          </p>
+
           <p className={styles.description}>
             Get started by editing{' '}
             <code className={styles.code}>pages/index.js</code>
