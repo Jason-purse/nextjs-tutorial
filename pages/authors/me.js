@@ -1,11 +1,20 @@
-import Link from "next/link";
+import useSWR from 'swr'
 
+/**
+ * me 通过 swr 进行客户端渲染 ...
+ * @param props
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function Me(props) {
+    const { data, error } = useSWR('/api/profile', fetch)
+    if(error) {
+        return <div>failed to load</div>
+    }
+    if(!data) {
+        return <div>loading</div>
+    }
     return (
-        <div>
-            Read <a href="/posts/first-post">this page!</a>
-            <p> To </p>
-            Read <Link href="/posts/first-post"><a>this page!</a></Link>
-        </div>
+        <div>hello {data.name}!</div>
     )
 }

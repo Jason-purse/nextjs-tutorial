@@ -4,8 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.idea
-yarn.lock
+
 # testing
 /coverage
 
@@ -31,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
