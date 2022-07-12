@@ -1,0 +1,69 @@
+
+
+.text-center {
+    text-align: center;
+}
+
+.margin-center {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.marginLeft20px {
+    margin-left: 20px;
+}
+
+.h1min {
+    font-size: 44px;
+}
+
+.h1middle {
+    font-size: 66px;
+}
+.h1max {
+    font-size: 88px;
+}
+
+.marginTop20px {
+    margin-top: 20px;
+}
+.marginTop10px {
+    margin-top: 20px;
+}
+.marginTop30px {
+    margin-top: 20px;
+}
+.marginTop15px {
+    margin-top: 20px;
+}
+.marginTop5px {
+    margin-top: 20px;
+}
+
+.marginBottom20px {
+    margin-bottom: 20px;
+}
+.marginBottom10px {
+    margin-bottom: 20px;
+}
+.marginBottom30px {
+    margin-bottom: 20px;
+}
+.marginBottom15px {
+    margin-bottom: 20px;
+}
+.marginBottom5px {
+    margin-bottom: 20px;
+}
+
+
+
+.redText {
+    color: mediumvioletred;
+}
+.skyBlueText {
+    color: skyblue;
+}
+.lightGrayText {
+    color: lightslategrey;
+}
