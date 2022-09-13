@@ -1,0 +1,43 @@
+.bidScroll {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.navList {
+  border: solid 1px black;
+  width: 300px;
+  margin: 0;
+}
+
+.navElement {
+  &:hover {
+    cursor: pointer;
+  }
+
+  height: 40px;
+  border-bottom: solid 1px grey;
+  box-sizing: border-box;
+
+}
+
+.navActiveElement {
+  //color: red;
+  background-color: red;
+}
+
+.navActiveElementContent {
+  background-color: red;
+}
+
+.navElementContent {
+  height: 400px;
+  border: solid 1px blueviolet;
+}
+
+.rightContent {
+  flex-grow: 1;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
