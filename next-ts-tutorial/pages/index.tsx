@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {useState} from "react";
 
 export default function Index(props: any) {
     return (
@@ -9,6 +10,9 @@ export default function Index(props: any) {
                 </Link>
             </div>
             <p> welcome to next.js app</p>
+            <Link href={"multi-page"}>
+                <a>per page layout</a>
+            </Link>
         </div>
     )
 }

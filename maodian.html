@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        div.left {
+            width: 300px;
+            border-right: solid 1px black;
+        }
+
+        div#app {
+            flex-grow: 1;
+            scroll-behavior: smooth;
+            overflow-y: auto;
+        }
+
+        div#app div {
+            height: 400px;
+            background-color: #999999;
+            margin: 5px 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="left">
+        <input type="number" id="input">
+        <button onclick="doInvoke(this)">跳到对应锚点</button>
+    </div>
+    <div id="app" onscroll="onScroll(this)">
+        <div id="1">1</div>
+        <div id="2">2</div>
+        <div id="3">3</div>
+        <div id="4">4</div>
+        <div id="5">5</div>
+    </div>
+</div>
+
+<script>
+    function doInvoke(event) {
+        let value = document.querySelector("#input").value
+        window.location.href = window.location.href.replace(window.location.hash, "#" + value);
+    }
+
+    function onScroll(event) {
+        console.log("scroll")
+    }
+</script>
+
+</body>
+</html>

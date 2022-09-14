@@ -12,9 +12,15 @@ export default function BidScroll() {
     let router = useRouter()
     let ref = useRef(undefined)
 
+    // 浅路由 模拟新路由(新组件挂载), 这个组件之前的状态都会保留 ..
     useEffect(() => {
         router.push(`#${activeIndex + 1}`, null, {shallow: true, scroll: false})
+
+        // ref.current?.children.item(activeIndex).scrollIntoView()
+
     }, [activeIndex])
+
+    // bidscroll
 
     return (
         <div className={cssModule.bidScroll}>
@@ -26,7 +32,7 @@ export default function BidScroll() {
             </ul>
             <div className={cssModule.rightContent}
                  ref={ref}
-                 onWheel={event => scrollListen(event, ref, activeIndex, setActiveIndex)}>
+                 onWheel={scrollListen().bind(null,ref,setActiveIndex)}>
                 {left.map((ele, index) => <section id={`${index + 1}`}
                                                    key={index}
                                                    className={`${cssModule.navElementContent}  ${activeIndex === index ? cssModule.navActiveElementContent : ''}`}>{ele}</section>)}
@@ -36,17 +42,31 @@ export default function BidScroll() {
     )
 }
 
-function scrollListen(event, ref, prevIndex, callback) {
+
+// 节流的思想(无关紧要的计算) ... 限制次数 login
+function scrollListen() {
+    let timer = null;
+    return (ref, callback,event) => {
+        if(timer != null) {
+            clearTimeout(timer)
+            timer =  null
+        }
+        timer = setTimeout(() => {
+            if (ref.current) {
+                let scrollTop = ref.current.scrollTop
+                // 取天花板数 ...
+                let index = Math.ceil(scrollTop / 400)
+                // scrollTop <=  component.0+ component.1 + component.2 + component.n
+
+                console.log("onscroll")
+                callback(index)
+            }
+        },200)
+    }
     // 滚动 ...
     // let count = event.target.childElementCount
 
-    if (ref.current) {
-        let scrollTop = ref.current.scrollTop
-        // 取天花板数 ...
-        let index = Math.ceil(scrollTop / 400)
 
-        callback(index)
-    }
     // let selectNodes = []
     // for (let i = 0; i < nodes.length; i++) {
     //     if (nodes.item(i).scrollTop === 0) {
