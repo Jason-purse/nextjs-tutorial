@@ -20,6 +20,7 @@ export default function BidScroll() {
 
     }, [activeIndex])
 
+    console.log(router)
     // bidscroll
 
     return (
